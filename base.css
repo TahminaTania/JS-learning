@@ -1,0 +1,67 @@
+body{
+    
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+h5{
+    margin-top: 50px;
+    margin-left: 10px;
+    font-size: large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.box{
+    background-color: aqua;
+    width: 500px;
+    height: 400px;
+    padding: 10px;
+    margin: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+ul{
+    display: flex;
+}
+ul li{
+    list-style: none;
+}
+button{
+    cursor: pointer;
+}
+
+#ans{
+    font-size: 18px;
+}
+
+#btn{
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+ #prv,#nxt {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgb(70, 70, 218);
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+
+}
+
+.sub_btn{
+    text-align: center;
+    margin: 20px;
+}
+#submit {
+    background-color: green;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;    
+}
