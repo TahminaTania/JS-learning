@@ -27,7 +27,9 @@ let  quizContainer=document.getElementById("box");
 let qusNo=0
 let Q=0
 
-let Correct=0
+let Correct=[0,0,0]
+
+
 
 
 
@@ -39,10 +41,14 @@ function Quiz(){
     Q=Questions[qusNo].ans
     console.log(Q)
     answer.innerHTML= Q.map((i)=>
-        `<ul><li> <input type="radio" name="options" value="${i}"/>${i}</li></ul>`
+        `<ul><li> <input type="radio" name="options"  value="${i}"/>${i}</li></ul>`
      ).join('')
         
 }
+
+function check() {
+    document.getElementsByName("options").checked = true;
+  }
 
 prev.addEventListener("click", function(){
     qusNo -=1;
@@ -68,22 +74,35 @@ function result(){
 
     const answerContainers = quizContainer.querySelector('input[name="options"]:checked');
 
-    console.log(answerContainers.value, "choosen")
+    // console.log(answerContainers.value, "choosen")
 
-    Questions.map((c)=>{
-
+    Questions.map((c,index)=>{
+          
         if(c.CurrectAns == answerContainers.value){
             console.log(c.CurrectAns, "True")
-            Correct+=1
+            Correct[index]=1
         }
         else{
             console.log(c.CurrectAns, "False")
         }
     })
-  
-    Submit.innerHTML = `${Correct} out of ${Questions.length}`;
+    console.log(Correct)
+
+       total()
+    
     }
 
 
 
- 
+ function total(){
+
+    let sum=0
+    Correct.forEach(item => {
+        sum += item;
+      });
+
+    console.log(sum, "=total")
+
+    Submit.innerHTML = `${sum} out of ${Questions.length}`;
+
+ }
