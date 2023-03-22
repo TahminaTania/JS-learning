@@ -13,7 +13,7 @@ const Questions=[
     {   id:3,
         Qus: "3. Javascript is an _______ language ?",
         ans:["Object Oriented","Object Based","None","A & B"],
-        CurrectAns:"A & B"
+        CurrectAns:"Object Oriented"
     }
 ]
 
@@ -22,24 +22,13 @@ let answer= document.getElementById("ans");
 let prev = document.getElementById("prv");
 let nxt = document.getElementById("nxt");
 let Submit = document.getElementById("submit");
-let  choose=document.querySelector('input'); 
+let  quizContainer=document.getElementById("box"); 
 
 let qusNo=0
 let Q=0
-let Result=0
 
+let Correct=0
 
-
-function Count(){
-    choose.forEach((element) => {
-        if(element.checked){
-            
-        }
-        
-    });
-
-
-}
 
 
 
@@ -50,10 +39,9 @@ function Quiz(){
     Q=Questions[qusNo].ans
     console.log(Q)
     answer.innerHTML= Q.map((i)=>
-        `<ul><li> <input type="radio" value="${i}"/>${i}</li></ul>`
+        `<ul><li> <input type="radio" name="options" value="${i}"/>${i}</li></ul>`
      ).join('')
         
-
 }
 
 prev.addEventListener("click", function(){
@@ -78,10 +66,22 @@ nxt.addEventListener("click", function(){
 
 function result(){
 
-       
-       Submit.textContent= `You got ${Result}`;
-       Count()
-        
+    const answerContainers = quizContainer.querySelector('input[name="options"]:checked');
+
+    console.log(answerContainers.value, "choosen")
+
+    Questions.map((c)=>{
+
+        if(c.CurrectAns == answerContainers.value){
+            console.log(c.CurrectAns, "True")
+            Correct+=1
+        }
+        else{
+            console.log(c.CurrectAns, "False")
+        }
+    })
+  
+    Submit.innerHTML = `${Correct} out of ${Questions.length}`;
     }
 
 

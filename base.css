@@ -12,7 +12,7 @@ h5{
     font-size: large;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
-.box{
+#box{
     background-color: aqua;
     width: 500px;
     height: 400px;
