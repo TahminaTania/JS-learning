@@ -30,10 +30,6 @@ let Q=0
 let Correct=[0,0,0]
 
 
-
-
-
-
 Quiz();
 
 function Quiz(){
@@ -54,7 +50,7 @@ prev.addEventListener("click", function(){
     qusNo -=1;
     console.log(qusNo);
     if(qusNo<=0){
-        console.log("qusNo is bigger");
+        // console.log("qusNo is bigger");
         qusNo=Questions.length
     }
     Quiz()
@@ -64,7 +60,7 @@ nxt.addEventListener("click", function(){
     qusNo +=1;
     console.log(qusNo);
     if(qusNo==Questions.length){
-        console.log("qusNo is --");
+        // console.log("qusNo is --");
         qusNo=0        
     }
     Quiz()
